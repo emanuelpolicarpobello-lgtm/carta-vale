@@ -1,0 +1,139 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101d2b" />
+  <meta name="description" content="Una pequeña carta para decir algo bonito, sin presiones." />
+  <title>Una carta al otro lado de la puerta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">✦</span>
+      <span>UNA PUERTA A OTRO MUNDO</span>
+    </a>
+  </header>
+
+  <main id="inicio">
+    <section class="intro">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> UN MENSAJE DEL OTRO LADO TE ESPERA</p>
+        <h1>Hay cosas que<br><em>merecen</em> decirse de otra forma</h1>
+        <p class="intro-text">A veces lo más valiente no es cruzarla, sino animarse a tocar. Esta es una pequeña forma de hacerlo.</p>
+        <button class="primary-button" id="openDoor" type="button">
+          <span class="button-sparkle">✧</span> Abrir la puertita <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <div class="door-scene" id="doorScene" aria-label="Ilustración de una pequeña puerta azul en una pared">
+        <div class="moon"></div>
+        <span class="star star-one">✦</span><span class="star star-two">✧</span><span class="star star-three">·</span>
+        <div class="wall-frame">
+          <div class="door-shadow"></div>
+          <div class="door" id="door">
+            <div class="door-panel panel-top"></div>
+            <div class="door-panel panel-bottom"></div>
+            <div class="door-knob"></div>
+            <div class="door-keyhole">⌑</div>
+          </div>
+          <div class="warm-light"></div>
+        </div>
+        <p class="door-caption">No hace falta saber qué hay al otro lado.</p>
+      </div>
+    </section>
+
+    <section class="letter-section" id="carta">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> PARA TI VAL</p>
+          <h2>Una carta en el otro mundo</h2>
+        </div>
+        <span class="handwritten">hecha con mucho cariño ♡</span>
+      </div>
+
+      <article class="letter-card" id="letterCard">
+        <div class="letter-topline"><span>✦</span></div>
+        <div class="letter-content">
+          <p class="letter-to">Para <span id="previewTo">alguien demasiado especial</span>:</p>
+          <h3 id="previewTitle">Quería confesarte algo</h3>
+          <div class="letter-body" id="previewBody">Hola Vale
+
+Hay algo que quería contarte desde hace un tiempo, y sin hacerlo más grande: me sigues gustando. Me gusta pasar tiempo contigo y hay algo en tu forma de ser que hace que mis días tengan un brillo distinto.
+
+Quizá esto sea un poco como encontrar una puertita donde antes solo había una pared. No sé qué hay del otro lado, y tampoco quiero decidirlo por ti; solo quería atreverme a tocar y preguntarte si te gustaría explorar esa posibilidad conmigo.
+
+Me gustaría invitarte a salir, conocernos de una manera un poquito más especial y ver qué pasa, a nuestro ritmo. Y si no sientes lo mismo, de verdad está bien. No cambia el cariño ni el respeto que te tengo. No tienes que responder ahora.</div>
+          <p class="letter-ps" id="previewPs">P. D. Prometo que esta invitación no viene con botones cosidos en los ojos. :)</p>
+          <div class="letter-signoff" hidden style="display: none;">
+            <span>Con cariño,</span>
+            <strong id="previewFrom">Alguien que se animó a tocar</strong>
+          </div>
+        </div>
+        <div class="letter-stamp" aria-hidden="true"><span>✦</span><small>PARA<br>TI</small></div>
+      </article>
+
+      <div class="letter-actions" hidden style="display: none;">
+        <p><span class="small-dot"></span> Puedes cambiar cada palabra para que suene a ti.</p>
+        <button class="secondary-button" id="toggleEditor" type="button" aria-expanded="false" aria-controls="editor">✎ Personalizar carta</button>
+      </div>
+
+      <section class="editor" id="editor" hidden>
+        <div class="editor-heading">
+          <div>
+            <p class="eyebrow">TU VERSIÓN</p>
+            <h3>Hazla tuya</h3>
+          </div>
+          <span class="edit-hint">La vista previa cambia mientras escribes.</span>
+        </div>
+        <div class="editor-grid">
+          <label>Nombre de quien la recibe
+            <input id="toInput" type="text" maxlength="45" value="alguien especial" placeholder="Su nombre" />
+          </label>
+          <label>Tu firma
+            <input id="fromInput" type="text" maxlength="55" value="Alguien que se animó a tocar" placeholder="Tu nombre o apodo" />
+          </label>
+          <label class="full-width">Título de la carta
+            <input id="titleInput" type="text" maxlength="65" value="Quería confesarte algo" />
+          </label>
+          <label class="full-width">Mensaje
+            <textarea id="bodyInput" rows="9">Hola.
+
+Hay algo que quería decirte desde hace tiempo, sin hacerlo más grande: me sigues gustando y es raro porque siento que ese sentimiento hacia ti es algo que no se me va a quitar. Me gusta pasar tiempo contigo aunque sea poco me gustaria que fuera mas y hay algo en tu forma de ser que hace que mis días tengan un brillo distinto.
+
+Quizá esto sea un poco como encontrar una puerta donde antes solo había una pared. No sé qué hay del otro lado, y tampoco quiero decidirlo por ti; solo quería atreverme a tocar y preguntarte si te gustaría explorar ese mundo desconocido conmigo.
+
+Me gustaría invitarte a salir, conocerte un poco mas de lo que ya te conozco, saber que cosas te gustan o que cosas te hacen enojar. Y si no sientes lo mismo, de verdad está bien y lo entendere. No cambia el cariño ni la amistad que ya tenemos. Igual seguiras siendo una de mis mejores amistades pero siento que esto es algo que debia sacarme.
+
+Te amo y aunque no se si sientas lo mismo que yo, ojala podamos hablarnos mas y tratar de formar algo, obviamente sin preciones no quiero que te sientas forzada a elegir ahorita mismo, solamente queria decirte y todo lo que he hecho hoy fue para que te dieras cuenta que me interesas y me gustas muchisimo.</textarea>
+          </label>
+          <label class="full-width">Posdata
+            <input id="psInput" type="text" maxlength="150" value="P. D. Con mucho cariño Ema " />
+          </label>
+        </div>
+        <div class="editor-actions">
+          <span class="save-status" id="saveStatus" aria-live="polite">Tus cambios se guardan en este navegador.</span>
+          <div class="editor-buttons">
+            <button class="text-button" id="resetButton" type="button">Restaurar texto</button>
+            <button class="secondary-button" id="copyButton" type="button">Copiar carta</button>
+            <button class="primary-button compact" id="downloadButton" type="button">Descargar carta ↗</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>Hecha para decir lo que a veces cuesta decir.</span>
+    <span class="footer-star">✦</span>
+    <span>El cariño nunca debería sentirse como una obligación.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
